@@ -72,7 +72,6 @@ const Experiences = () => {
   const handleOk = () => {
     setIsModalOpen(false);
     form.validateFields().then((values) => {
-      
       if (selected) {
         putData(`experiences/${selected}`, { ...values }).then(() => {
           setIsModalOpen(false);
@@ -83,7 +82,6 @@ const Experiences = () => {
           setIsModalOpen(false);
           recall();
         });
-   
       }
     });
   };
@@ -137,12 +135,11 @@ const Experiences = () => {
             </Button>
           </div>
         )}
-
         dataSource={experiences}
         columns={columns}
         loading={loading}
         scroll={{ x: 700 }}
-        rowKey={record => record.id}
+        rowKey={(record) => record.id}
       />
       <Modal
         title="Add Experience"

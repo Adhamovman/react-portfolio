@@ -1,8 +1,7 @@
-import { Button, Table } from 'antd'
-import React from 'react'
-import { ROLE, USER_ID } from '../../utils';
-import { useFetch } from '../../hooks';
-
+import { Button, Table } from "antd";
+import React from "react";
+import { ROLE, USER_ID } from "../../utils";
+import { useFetch } from "../../hooks";
 
 const Portfolios = () => {
   const columns = [
@@ -37,30 +36,21 @@ const Portfolios = () => {
       width: 180,
       render: () => (
         <span className="d-flex justify-content-between">
-          <Button
-            type="primary"
-       
-          >
-            Edit
-          </Button>
-          <Button
-            type="primary"
-            danger
-        
-          >
+          <Button type="primary">Edit</Button>
+          <Button type="primary" danger>
             Delete
           </Button>
         </span>
       ),
     },
   ];
- 
+
   const { data: portfolios, loading } = useFetch(
     `portfolios${ROLE === "client" ? `?user[in]=${USER_ID}` : ``}`
   );
   return (
     <>
-     <Table
+      <Table
         title={() => (
           <div
             style={{
@@ -70,7 +60,7 @@ const Portfolios = () => {
             }}
           >
             <h4>Users table</h4>
-            <Button className="px-3 " type="primary" >
+            <Button className="px-3 " type="primary">
               Add user
             </Button>
           </div>
@@ -79,11 +69,10 @@ const Portfolios = () => {
         columns={columns}
         loading={loading}
         scroll={{ x: 700 }}
-        rowKey={record => record.id}
+        rowKey={(record) => record.id}
       />
-    
     </>
-  )
-}
+  );
+};
 
-export default Portfolios
+export default Portfolios;

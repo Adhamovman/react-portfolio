@@ -1,34 +1,33 @@
- 
- .trigger {
-    padding: 0 24px ;
-    font-size: 18px ;
-    line-height: 64px ;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-  
-  .trigger:hover {
-    color: #9da7af ;
-  }
-  
- .logo {
+.trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #9da7af;
+}
+
+.logo {
   border-radius: 6px;
-    height: 32px ;
-    margin: 16px ;
-    background: rgba(255, 255, 255, 0.3) ;
-    span {
-      margin: 4px;
-    }
-    a {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      color: #fff;
-      &:hover {
-        color: #cacaca;
-      }
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+  span {
+    margin: 4px;
+  }
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    &:hover {
+      color: #cacaca;
     }
   }
+}
 .ant-layout-sider-children {
   height: 100vh !important;
 }
@@ -41,9 +40,7 @@
 .ant-layout-content {
   height: calc(100vh - 200px) !important;
   overflow-y: scroll;
-
 }
-
 
 .ant-menu-item:last-child {
   bottom: -40vh;

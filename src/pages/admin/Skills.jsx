@@ -49,8 +49,12 @@ const Skills = () => {
   const [form] = Form.useForm();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selected, setSelected] = useState(null);
-  
-  const { data: skills, loading, recall } = useFetch(`skills${ROLE === "client" ? `?user[in]=${USER_ID}` : ``}`);
+
+  const {
+    data: skills,
+    loading,
+    recall,
+  } = useFetch(`skills${ROLE === "client" ? `?user[in]=${USER_ID}` : ``}`);
 
   const handleOk = () => {
     setIsModalOpen(false);

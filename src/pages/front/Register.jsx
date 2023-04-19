@@ -27,7 +27,6 @@ const Register = () => {
   };
 
 
-
   return (
     <>
       <div className="loginContainer">

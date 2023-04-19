@@ -1,5 +1,11 @@
-
-import { BarChartOutlined, CopyOutlined, DashboardOutlined, ExperimentOutlined, MessageOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  BarChartOutlined,
+  CopyOutlined,
+  DashboardOutlined,
+  ExperimentOutlined,
+  MessageOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 import {
   Dashboard,
   Experiences,

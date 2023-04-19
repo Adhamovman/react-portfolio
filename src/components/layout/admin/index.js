@@ -45,11 +45,7 @@ const AdminLayout = ({ children }) => {
             })),
             {
               icon: (
-                <Link    
-                  className="logout"
-                  onClick={logOut}
-                  
-                >
+                <Link className="logout" onClick={logOut}>
                   <LogoutOutlined />
                 </Link>
               ),

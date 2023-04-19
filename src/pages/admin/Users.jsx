@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { Button, Form, Input, Modal, Select, Table } from "antd";
 import { deleteData, getData, putData, sendData } from "../../server/common";
 import { USER_ROLES } from "../../const";
@@ -57,7 +57,7 @@ const Users = () => {
   const [form] = Form.useForm();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selected, setSelected] = useState(null);
- const {data: users, loading, recall} = useFetch("users")
+  const { data: users, loading, recall } = useFetch("users");
 
   const handleOk = () => {
     setIsModalOpen(false);

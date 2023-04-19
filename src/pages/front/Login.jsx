@@ -23,7 +23,7 @@ const Login = () => {
           toast.success("Muvaffaqqiyatli kirildi");
           window.location.href = "/dashboard";
         } else {
-          toast.info("Sizga kirish uchun ruxsat berilmagan!")
+          toast.info("Sizga kirish uchun ruxsat berilmagan!");
         }
       })
       .catch(() => {
