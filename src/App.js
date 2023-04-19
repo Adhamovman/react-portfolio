@@ -1,24 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Home, Login, Register } from "./pages/front";
+
+import { AdminLayout, FrontLayout } from "./components/layout";
+import { ToastContainer } from "react-toastify";
+import { TOKEN } from "./const";
+import NotFound from "./pages/NotFound";
+import { ROLE } from "./utils";
+import { adminRoutes } from "./const/menus";
+
+import PureCounter from "@srexi/purecounterjs";
+
+const pure = new PureCounter();
 
 function App() {
+  const frontRotes = [
+    { url: "", page: Home },
+    { url: "login", page: Login },
+    { url: "register", page: Register },
+  ];
+
+  const isAuthorized = localStorage.getItem(TOKEN) && ROLE !== "user"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ToastContainer />
+      <Routes>
+        {frontRotes.map(({ url, page: Page }) => (
+          <Route
+            key={url}
+            path={"/" + url}
+            element={
+              <FrontLayout>
+                <Page />
+              </FrontLayout>
+            }
+          />
+        ))}
+        {isAuthorized &&
+          adminRoutes.map(({ url, page: Page }) => (
+            <Route
+              key={url}
+              path={"/" + url}
+              element={
+                <AdminLayout>
+                  <Page />
+                </AdminLayout>
+              }
+            />
+          ))}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
 
